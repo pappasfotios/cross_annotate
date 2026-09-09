@@ -1,6 +1,6 @@
 # cross_annotate
 
-A lightweight Bash pipeline linking genomic BED regions in non-model species to model-organism protein homologues. It expands regions, identifies overlapping genes from a GFF3 annotation, extracts gene-body DNA and searches a model proteome using DIAMOND BLASTX.
+A lightweight Bash pipeline linking genomic regions from non-model species (in BED files) to model-organism protein homologues. It expands regions (flanking genomic intervals), identifies overlapping genes from a GFF3 annotation, extracts gene-body DNA and searches a model proteome using DIAMOND BLASTX.
 
 ## Install
 
