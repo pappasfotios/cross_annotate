@@ -89,7 +89,7 @@ case "$model_input" in
 esac
 
 if [[ -z "$output_dir" ]]; then
-    output_dir="go${model}"
+    output_dir="ca${model}"
 fi
 
 database_root=${DATABASE_ROOT:-./protein_databases}
