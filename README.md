@@ -4,24 +4,20 @@ A lightweight Bash pipeline linking genomic BED regions in non-model species to 
 
 ## Install
 
-With Conda installed, replace the repository URL below with the URL hosting the script:
-
 ```bash
 git clone https://github.com/pappasfotios/cross_annotate.git cross_annotate
 cd cross_annotate
 
-conda create -n cross_annotate -c conda-forge -c bioconda \
-    bedtools diamond samtools curl gzip -y
+conda create -n cross_annotate -c conda-forge -c bioconda bedtools diamond samtools curl gzip -y
 conda activate cross_annotate
 ```
 
-Commands below assume the script is named `cross_annotate.sh` in the repository root. Adjust its path if needed. The script should use the activated environment; remove any hardcoded activation of another environment.
+The script should use the activated environment.
 
 ## Run
 
 ```bash
-bash cross_annotate.sh peaks.bed reference.fa annotation.gff \
-    zebrafish 5000 1e-10 results
+bash cross_annotate.sh peaks.bed reference.fa annotation.gff zebrafish 5000 1e-10 results
 ```
 
 Arguments, in order:
@@ -36,15 +32,7 @@ Arguments, in order:
 
 Reference FASTA, GFF3 and BED must use the same assembly and sequence identifiers.
 
-Proteomes are downloaded from UniProt when absent and cached with DIAMOND databases in `./protein_databases/<model>/`. Internet access is required for the first download. Existing downloads are reused.
-
-Optional settings:
-
-```bash
-THREADS=16 DATABASE_ROOT=/path/to/protein_databases \
-    bash cross_annotate.sh peaks.bed reference.f(n)a annotation.gff \
-    zebrafish 5000 1e-10 results
-```
+Proteomes are downloaded from UniProt when absent and cached with DIAMOND databases in `./protein_databases/<model>/`. Existing downloads are reused.
 
 ## Outputs
 
