@@ -58,3 +58,9 @@ THREADS=16 DATABASE_ROOT=/path/to/protein_databases \
 
 
 Matches are candidate homologues, not confirmed orthologues.
+
+## Inspiration
+
+Earlier versions of this workflow were used in the following studies: 
+Pappas, F., Kurta, K., Vanhala, T., Jeuthe, H., Hagen, Ø., Beirão, J., & Palaiokostas, C. (2023). Whole-genome re-sequencing provides key genomic insights in farmed Arctic charr (Salvelinus alpinus) populations of anadromous and landlocked origin from Scandinavia. Evolutionary Applications, 16, 797–813. https://doi.org/10.1111/eva.13537
+Pappas, F., Johnsson, M., Andersson, G. et al. Sperm DNA methylation landscape and its links to male fertility in a non-model teleost using EM-seq. Heredity 134, 293–305 (2025). https://doi.org/10.1038/s41437-025-00756-y
