@@ -193,7 +193,7 @@ if [[ ! -s "$filter_intersected" ]]; then
     exit 0
 fi
 
-# Write gene display names in the same order as filter_intersected.bed.
+# Write gene display names in same ordr as filter_intersected.bed.
 awk 'BEGIN {FS=OFS="\t"}
      NR==FNR {
          if (FNR > 1) name[$1]=$2
@@ -203,7 +203,7 @@ awk 'BEGIN {FS=OFS="\t"}
     "$gene_metadata" "$filter_intersected" \
     > "$gene_names"
 
-# DIAMOND blastx searches both strands, so strand-specific extraction is unnecessary.
+# DIAMOND blastx searches both strands.
 bedtools getfasta \
     -fi "$reference_fasta" \
     -bed "$filter_intersected" \
@@ -240,8 +240,7 @@ diamond blastx \
     --threads "${THREADS:-8}" \
     --out "$hits"
 
-# Select the lowest-E-value hit per query; break ties using the highest bit score.
-# For UniProt-style identifiers (sp|ACCESSION|NAME), retain ACCESSION only.
+# Keep the lowest-E-value hit per query. Break ties using the highest bit score.
 LC_ALL=C sort -t $'\t' -k1,1 -k11,11g -k12,12gr "$hits" \
     | awk -F'\t' '!seen[$1]++ {
           id=$2
