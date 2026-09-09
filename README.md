@@ -7,7 +7,7 @@ A lightweight Bash pipeline linking genomic BED regions in non-model species to 
 With Conda installed, replace the repository URL below with the URL hosting the script:
 
 ```bash
-git clone <repository-url> cross_annotate
+git clone [<repository-url>](https://github.com/pappasfotios/cross_annotate.git) cross_annotate
 cd cross_annotate
 
 conda create -n cross_annotate -c conda-forge -c bioconda \
